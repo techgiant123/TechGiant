@@ -1,18 +1,21 @@
-import React from 'react';
-import Header from './header/header';
-import videoSrc from './assets/3163534-uhd_3840_2160_30fps.mp4';
+import Header from './components/header/header';
+import {BgVideo} from './components/LandingPageBGVideo/BgVideoComponent';
 import './index.css';
 import './App.css';
 
 function App() {
   return (
     <div>
-      <video poster='./assets/3163534-uhd_3840_2160_30fps.mp4' loop autoPlay muted playsInline className='h-full w-full'>
-        <source src={videoSrc} type="video/mp4" />
-      </video>
+      <div>
       <Header />
+      </div>
+      <div>
+        <BgVideo />
+      </div>
+    
     </div>
   );
 }
 
 export default App;
+// Empowering future through innovative software solutions
