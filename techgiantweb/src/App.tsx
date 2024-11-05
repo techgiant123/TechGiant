@@ -1,19 +1,19 @@
 import Header from './components/header/header';
-import {BgVideo} from './components/LandingPageBGVideo/BgVideoComponent';
+import {HeroSection} from './components/LandingPageBGVideo/heroPage';
+
+
 import './index.css';
 import './App.css';
+import OurService from './components/carousel/ourServiceCarousel';
 
 function App() {
   return (
     <div>
-      <div>
-      <Header />
-      </div>
-      <div>
-        <BgVideo />
-      </div>
+    <Header />
+    <HeroSection />
+    <OurService/>
     
-    </div>
+  </div>
   );
 }
 
