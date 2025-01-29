@@ -1,21 +1,33 @@
-/** @type {import('tailwindcss').Config} */
-export default {
-  content: [ "./src/**/*.{js,jsx,ts,tsx}",],
-  theme: {
-    extend: {},
-    // colors: {
-    //   'primary-text': '#101828',
-    //   'secondary-text': '#3065fa',
-    //   'gray-dark': '#344054',
-    //   'gray-light': '#667085',
-    //   'bg-blue': '#3065fa',
-    //   'bg-purple': '#9a93f4',
-    //   'bg-skyblue-light': '#bce5f6',
-    //   'bg-orange-light': '#fcd1a6',
-    //   'bg-green-light': '#b5e5b8',
-    //   'bg-light': '#fefdf6',
-    // },
-  },
-  plugins: [],
-}
+const defaultTheme = require("tailwindcss/defaultTheme");
+const colors = require("tailwindcss/colors");
 
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: ["./src/**/*.{js,jsx,ts,tsx}"],
+  theme: {
+    extend: {
+      animation: {
+   
+      },
+      keyframes: {
+       
+        scroll: {
+      
+        },
+      },
+    },
+  },
+  plugins: [
+    // If you want to define custom colors or variables, use this plugin approach:
+    // function to define color variables globally
+    // This is just a placeholder since `addVariablesForColors` is not defined.
+    // For example:
+    function ({ addUtilities }) {
+      addUtilities({
+        '.scroll-animation': {
+          animation: 'scroll 40s forwards linear infinite',
+        },
+      });
+    },
+  ],
+};
