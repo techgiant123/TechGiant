@@ -1,12 +1,21 @@
-import { useState, useEffect } from "react";
-import { RotatingAnimation } from "./rotatingAnimation";
+import { useState, useEffect, useMemo, lazy, Suspense, memo } from "react";
 
-export const HeroSection = () => {
-  const words = [
-    "<>Empowering the future through",
-    "innovative software",
-    "solutions </>",
-  ];
+// Lazy load the RotatingAnimation component (for named exports)
+const RotatingAnimation = lazy(() =>
+  import("./rotatingAnimation").then((module) => ({
+    default: module.RotatingAnimation,
+  }))
+);
+
+export const HeroPage = memo(() => {
+  const words = useMemo(
+    () => [
+      "<>Empowering the future through",
+      "innovative software",
+      "solutions </>",
+    ],
+    []
+  );
 
   const [lines, setLines] = useState<string[]>(["", "", ""]);
   const [wordIndex, setWordIndex] = useState(0);
@@ -20,7 +29,7 @@ export const HeroSection = () => {
     }
 
     const currentWord = words[wordIndex];
-    let typingSpeed = 100;
+    const typingSpeed = 100;
 
     const typeEffect = setTimeout(() => {
       if (charIndex < currentWord.length) {
@@ -39,7 +48,7 @@ export const HeroSection = () => {
     }, typingSpeed);
 
     return () => clearTimeout(typeEffect);
-  }, [charIndex, wordIndex]);
+  }, [charIndex, wordIndex, words]);
 
   return (
     <div
@@ -51,15 +60,15 @@ export const HeroSection = () => {
         className="z-10 flex flex-col justify-center h-full text-center text-white bg-bgColor items-baseline"
         style={{
           background:
-            "radial-gradient(circle at left, rgba(118,60,172,1) 0%, rgba(15,4,32,1) 30%)",
+            "radial-gradient(circle at left, rgba(118,60,172,1) 0%, rgba(17, 7, 31, 1) 30%)",
         }}
       >
-        <span className=" pl-[120px]  text-lg sm:text-xl md:text-2xl lg:text-3xl">
+        <span className="pl-[120px] text-lg sm:text-xl md:text-2xl lg:text-3xl">
           Benefit from our software solutions.
         </span>
 
         {/* Typing Animation */}
-        <div className="relative ">
+        <div className="relative">
           <h1 className="text-2xl relative z-10 sm:text-4xl md:text-5xl lg:text-6xl leading-tight text-left pl-[120px]">
             {lines.map((line, index) => (
               <span key={index} className="block">
@@ -78,8 +87,10 @@ export const HeroSection = () => {
 
       {/* Rotating Logo (Visible only on large screens) */}
       <div className="absolute right-[-12%] top-1/2 transform -translate-y-1/2 hidden md:flex">
-        <RotatingAnimation />
+        <Suspense fallback={<div>Loading...</div>}>
+          <RotatingAnimation />
+        </Suspense>
       </div>
     </div>
   );
-};
+});

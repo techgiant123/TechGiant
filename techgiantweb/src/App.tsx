@@ -1,34 +1,29 @@
 import Header from "./components/header/header";
-import { HeroSection } from "./components/LandingPageBGVideo/heroPage";
-import { InfiniteMovingCardsDemo } from "./components/traningCards/tAndPServices";
+import { Routes, Route, useLocation } from "react-router-dom";
 import "./index.css";
 import "./App.css";
-import OurService from "./components/carousel/ourServiceCarousel";
-import { FeedbackContaner } from "./components/feedbackCard/feedbackContaner";
-import ProfilePic from "./icons/profileIcon";
-import FeedbackApp from "./components/feedback2/feedback2";
-import ImageSlider from "./components/carousel/Carousel";
-import Gallery from "./components/carousel/c1";
-import TechGiantText from "./icons/illumination";
+import { HomePage } from "./components/Home/homePage";
+import Footer from "./components/footer/heroFooter";
+import { VaptContaner } from "./services/vaptContanar";
+import { useEffect } from "react";
+
 function App() {
+  const location = useLocation();
+
+  // ✅ Scroll to top on route change
+  useEffect(() => {
+    console.log("Navigating to:", location.pathname);
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
+
   return (
     <div className="bg-bgColor">
       <Header />
-      <HeroSection />
-
-      {/* <OurService /> */}
-
-      {/* <ImageSlider /> */}
-
-      <Gallery />
-      <div className="flex h-[170px] w-screen  ">
-        <TechGiantText />
-      </div>
-
-      <InfiniteMovingCardsDemo />
-      <FeedbackContaner />
-      <ProfilePic />
-      <FeedbackApp />
+      <Routes key={location.pathname}>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/Vapt" element={<VaptContaner />} />
+      </Routes>
+      <Footer />
     </div>
   );
 }

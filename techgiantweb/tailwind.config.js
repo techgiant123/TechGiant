@@ -7,7 +7,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        bgColor: "#120420",
+        bgColor: "#11071F",
         // bgColor: "#212B38",
         navBg: "#1A0B2E",
         cardBg: "#726EFF",
@@ -19,6 +19,8 @@ module.exports = {
       animation: {
         typewriter: "typewriter 2s steps(11) forwards",
         blink: "blink 0.8s infinite",
+        scroll: "scroll 40s linear infinite",
+        scrollReverse: "scrollReverse 40s linear infinite",
       },
       keyframes: {
         blink: {
@@ -29,7 +31,14 @@ module.exports = {
             left: "100%",
           },
         },
-        scroll: {},
+        scroll: {
+          "0%": { transform: "translateX(0)" },
+          "100%": { transform: "translateX(-1750px)" },
+        },
+        scrollReverse: {
+          "0%": { transform: "translateX(-1000px)" },
+          "100%": { transform: "translateX(0)" },
+        },
       },
     },
   },
@@ -42,6 +51,13 @@ module.exports = {
       addUtilities({
         ".scroll-animation": {
           animation: "scroll 40s forwards linear infinite",
+        },
+      });
+    },
+    function ({ addUtilities }) {
+      addUtilities({
+        ".user-modify": {
+          "-webkit-user-modify": "read-write-plaintext-only",
         },
       });
     },

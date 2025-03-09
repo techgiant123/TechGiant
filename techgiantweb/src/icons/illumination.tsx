@@ -2,12 +2,12 @@ import React from "react";
 
 const TechGiantText: React.FC = () => {
   return (
-    <div className="flex flex-row justify-center items-center w-screen h-[250px] bg-bgColor">
-      <div>
+    <div className="flex justify-center items-center w-screen h-[250px] bg-bgColor overflow-hidden">
+      <div className="w-full max-w-[90%] md:max-w-[700px] h-[150px]">
         <svg
-          width="700px"
-          height="150px"
-          className="max-w-full justify-center items-center flex flex-row"
+          viewBox="0 0 700 150"
+          className="w-full h-full"
+          preserveAspectRatio="xMidYMid meet"
         >
           <text
             x="50%"
@@ -15,7 +15,7 @@ const TechGiantText: React.FC = () => {
             dominantBaseline="middle"
             textAnchor="middle"
             fontSize="130"
-            className="tech-text ml-[120px] flex flex-col text-center"
+            className="tech-text"
           >
             TECH GIANT
           </text>
@@ -24,21 +24,18 @@ const TechGiantText: React.FC = () => {
         <style>
           {`
           @import url('https://fonts.googleapis.com/css2?family=League+Gothic&display=swap');
-          @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
           .tech-text {
-  font-family: 'League Gothic', sans-serif;
-  text-align: center;
-  justify-item: center;
-  stroke-width: 3px;
-  stroke-dasharray: 80;
-  fill: rgba(0,0,0,0);
-  stroke-linecap: round;
-  animation: follow 1.8s linear infinite;
-  transition: all 2.1s;
-  letter-spacing: 20px; /* Adjust this value as needed */
-}
-
+            font-family: 'League Gothic', sans-serif;
+            text-align: center;
+            stroke-width: 3px;
+            stroke-dasharray: 80;
+            fill: rgba(0, 0, 0, 0);
+            stroke-linecap: round;
+            animation: follow 1.8s linear infinite;
+            transition: all 2.1s;
+            letter-spacing: 20px;
+          }
 
           @keyframes follow {
             0% {
@@ -63,10 +60,25 @@ const TechGiantText: React.FC = () => {
             stroke-width: 2px;
           }
 
-          @media (max-width: 600px) {
-            svg, text {
-              transform: scale(0.75);
-              margin-left: -10px;
+          /* Responsive adjustments */
+          @media (max-width: 768px) {
+            .tech-text {
+              font-size: 100px; /* Smaller font size for tablets */
+              letter-spacing: 15px;
+            }
+          }
+
+          @media (max-width: 480px) {
+            .tech-text {
+              font-size: 60px; /* Smaller font size for mobile */
+              letter-spacing: 10px;
+            }
+          }
+
+          @media (max-width: 320px) {
+            .tech-text {
+              font-size: 50px; /* Extra small font size for very small devices */
+              letter-spacing: 5px;
             }
           }
         `}

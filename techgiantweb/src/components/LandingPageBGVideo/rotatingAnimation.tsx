@@ -13,21 +13,35 @@ export const RotatingAnimation: React.FC<SigmaLogoProps> = ({
   const [rotation, setRotation] = useState(0);
   const [size, setSize] = useState(800); // Default for desktop
 
+  // Throttle resize event to avoid excessive re-renders
   useEffect(() => {
     const updateSize = () => {
       setSize(window.innerWidth < 768 ? 400 : 800); // Adjust for mobile
     };
 
     updateSize();
-    window.addEventListener("resize", updateSize);
-    return () => window.removeEventListener("resize", updateSize);
+
+    // Throttle the resize event
+    let timeoutId: NodeJS.Timeout;
+    const handleResize = () => {
+      clearTimeout(timeoutId);
+      timeoutId = setTimeout(updateSize, 100); // Adjust throttle time as needed
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+      clearTimeout(timeoutId);
+    };
   }, []);
 
+  // Rotate the SVG
   useEffect(() => {
     const interval = setInterval(() => {
       setRotation((prev) => (prev + rotationSpeed) % 360);
     }, 50);
-    return () => clearInterval(interval);
+
+    return () => clearInterval(interval); // Clear interval on unmount
   }, [rotationSpeed]);
 
   const center = size / 2;
@@ -36,18 +50,12 @@ export const RotatingAnimation: React.FC<SigmaLogoProps> = ({
 
   return (
     <div className="relative" style={{ width: size, height: size }}>
-      {/* Glowing Gradient Effect */}
-      <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-gradient-radial from-blue-400/50 via-blue-500/30 to-transparent rounded-full blur-xl animate-pulse shadow-2xl" />
-        <div className="absolute inset-0 bg-gradient-radial from-blue-600/50 via-transparent to-transparent rounded-full blur-2xl opacity-70" />
-      </div>
-
       {/* Main Rotating Text and Icon */}
       <div
-        className="absolute inset-0 flex items-center justify-center "
+        className="absolute inset-0 flex items-center justify-center bg-[#11071F]"
         style={{
           background:
-            "radial-gradient(circle, rgba(118,60,172,1) 9%, rgba(15,4,32,1) 49%)",
+            "radial-gradient(circle, rgba(118,60,172,1) 9%, rgba(17,7,31) 49%)",
         }}
       >
         <Icon height={iconSize} width={iconSize} />
