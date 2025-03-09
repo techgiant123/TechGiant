@@ -6,6 +6,7 @@ import { HomePage } from "./components/Home/homePage";
 import Footer from "./components/footer/heroFooter";
 import { VaptContaner } from "./services/vaptContanar";
 import { useEffect } from "react";
+import ConnectWithUsSection from "./services/vapt/contactUs";
 
 function App() {
   const location = useLocation();
@@ -23,6 +24,8 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/Vapt" element={<VaptContaner />} />
       </Routes>
+      <ConnectWithUsSection />
+
       <Footer />
     </div>
   );

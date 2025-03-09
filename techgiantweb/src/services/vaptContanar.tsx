@@ -1,10 +1,15 @@
-import KyndrylCyberDefense from "./vapt/vapt";
+import TGCyberDefense from "./vapt/vapt";
 import SecurityOperationsHero from "./vapt/vaptHero";
+import TechgiantSecurityComponent from "./vapt/tgHelp";
+import WhyWorkWithUsSection from "./vapt/whyWorkWithTG";
+
 export function VaptContaner() {
   return (
     <div className="bg-bgColor">
       <SecurityOperationsHero />
-      <KyndrylCyberDefense />
+      <TGCyberDefense />
+      <TechgiantSecurityComponent />
+      <WhyWorkWithUsSection />
     </div>
   );
 }

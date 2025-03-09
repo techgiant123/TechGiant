@@ -2,11 +2,11 @@ import React from "react";
 
 const SecurityOperationsHero: React.FC = () => {
   return (
-    <div className="w-full relative h-screen md:h-96">
+    <div className="w-full relative h-screen md:h-[66rem] mt-[58px]">
       {/* Background image container */}
       <div className="absolute inset-0 w-full h-full">
         <img
-          src="/api/placeholder/1920/768"
+          src="./src/assets/vaptBG.png"
           alt="Security operations background"
           className="w-full h-full object-cover"
         />

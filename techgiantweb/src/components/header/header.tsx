@@ -45,7 +45,7 @@ const Header: React.FC = () => {
     <div className="wrap" id="headerContaner">
       <header
         ref={headerRef}
-        className="fixed z-20 px-4 md:px-[20rem] py-1 top-0 left-0 w-full text-white h-[var(--header-height)] overflow-visible bg-bgColor"
+        className="fixed z-20 px-4 md:px-20 py-2 top-0 left-0 w-full text-white h-[var(--header-height)] bg-bgColor"
         id="header"
       >
         <div className="flex justify-between items-center">
@@ -79,7 +79,7 @@ const Header: React.FC = () => {
             <ul className="flex space-x-4 md:space-x-20 relative">
               <li className="relative" ref={dropdownRef}>
                 <button
-                  className="hs-dropdown-toggle py-3 px-4 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border  text-white shadow-2xs hover:bg-carousel2 focus:outline-hidden disabled:opacity-50 disabled:pointer-events-none"
+                  className="flex items-center gap-2 text-sm font-medium rounded-lg px-4 py-2 bg-gradient-to-r from-[#500073] to-[#11071F] text-white hover:bg-[#500073] transition"
                   aria-haspopup="menu"
                   aria-expanded="false"
                   aria-label="Dropdown"
@@ -87,23 +87,25 @@ const Header: React.FC = () => {
                 >
                   Services{" "}
                   <svg
-                    className="hs-dropdown-open:rotate-180 size-4"
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
+                    className="w-4 h-4 transform transition-transform"
+                    style={{
+                      transform: `rotate(${isDropdownOpen ? 180 : 0}deg)`,
+                    }}
                     fill="none"
                     stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+                    viewBox="0 0 24 24"
                   >
-                    <path d="m6 9 6 6 6-6" />
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="m6 9 6 6 6-6"
+                    />
                   </svg>
                 </button>
                 {isDropdownOpen && (
-                  <ul className="absolute left-0 mt-2 w-[20rem] md:w-[50rem] p-4 bg-white text-carousel2 rounded-lg shadow-lg border transform origin-top transition-all duration-300 ease-in-out">
-                    <span className="text-left text-lg md:text-[30px] text-wrap flex mb-4">
+                  <ul className="absolute left-0 mt-2 w-64 md:w-80 bg-white text-black rounded-lg shadow-lg border p-4 transition-all duration-300">
+                    <span className="text-lg font-semibold mb-2 block">
                       Services that drive business results
                     </span>
                     <li>
