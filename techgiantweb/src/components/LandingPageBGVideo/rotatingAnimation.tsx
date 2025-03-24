@@ -11,28 +11,28 @@ export const RotatingAnimation: React.FC<SigmaLogoProps> = ({
   rotationSpeed = 0.7,
 }) => {
   const [rotation, setRotation] = useState(0);
-  const [size, setSize] = useState(800); // Default for desktop
+  const [size, setSize] = useState(900); // Default size for desktop
 
-  // Throttle resize event to avoid excessive re-renders
+  // Update size based on screen width
   useEffect(() => {
     const updateSize = () => {
-      setSize(window.innerWidth < 768 ? 400 : 800); // Adjust for mobile
+      const screenWidth = window.innerWidth;
+      if (screenWidth < 768) {
+        setSize(200); // Small screens (e.g., 11-12 inches)
+      } else if (screenWidth < 1024) {
+        setSize(400); // Medium screens (e.g., 13-14 inches)
+      } else if (screenWidth < 1440) {
+        setSize(600); // Large screens (e.g., 15-16 inches)
+      } else {
+        setSize(800); // Extra-large screens (e.g., 17-18 inches)
+      }
     };
 
     updateSize();
 
-    // Throttle the resize event
-    let timeoutId: NodeJS.Timeout;
-    const handleResize = () => {
-      clearTimeout(timeoutId);
-      timeoutId = setTimeout(updateSize, 100); // Adjust throttle time as needed
-    };
-
-    window.addEventListener("resize", handleResize);
-    return () => {
-      window.removeEventListener("resize", handleResize);
-      clearTimeout(timeoutId);
-    };
+    // Add resize event listener
+    window.addEventListener("resize", updateSize);
+    return () => window.removeEventListener("resize", updateSize);
   }, []);
 
   // Rotate the SVG
@@ -49,7 +49,10 @@ export const RotatingAnimation: React.FC<SigmaLogoProps> = ({
   const iconSize = size * 0.3; // Scale icon size
 
   return (
-    <div className="relative" style={{ width: size, height: size }}>
+    <div
+      className="relative sm:h-[400px] sm:w-[400px] "
+      style={{ width: size, height: size }}
+    >
       {/* Main Rotating Text and Icon */}
       <div
         className="absolute inset-0 flex items-center justify-center bg-[#11071F]"
@@ -80,7 +83,7 @@ export const RotatingAnimation: React.FC<SigmaLogoProps> = ({
             fill="none"
           />
           <text
-            className="fill-white font-light"
+            className="fill-white font-light font-doto"
             style={{ fontSize: size * 0.05 }}
           >
             <textPath href="#textPath" startOffset="0%">

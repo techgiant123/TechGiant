@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@fontsource/big-shoulders-stencil": "^5.2.1",
     "@gsap/react": "^2.1.2",
     "@lottiefiles/lottie-player": "^2.0.12",
     "clsx": "^2.1.1",

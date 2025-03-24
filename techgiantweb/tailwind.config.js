@@ -5,10 +5,22 @@ const colors = require("tailwindcss/colors");
 module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
+    screens: {
+      xs: { max: "400px" },
+      sm: "640px",
+      md: "768px",
+      lg: "1024px",
+      xl: "1280px",
+      "2xl": "1536px",
+    },
     extend: {
+      fontFamily: {
+        sans: ["Roboto", ...defaultTheme.fontFamily.sans],
+        bigShoulders: ["Big Shoulders Stencil", "sans-serif"],
+        doto: ["Doto", "sans-serif"],
+      },
       colors: {
         bgColor: "#11071F",
-        // bgColor: "#212B38",
         navBg: "#1A0B2E",
         cardBg: "#726EFF",
         carousel1: "#500073",
@@ -43,10 +55,6 @@ module.exports = {
     },
   },
   plugins: [
-    // If you want to define custom colors or variables, use this plugin approach:
-    // function to define color variables globally
-    // This is just a placeholder since `addVariablesForColors` is not defined.
-    // For example:
     function ({ addUtilities }) {
       addUtilities({
         ".scroll-animation": {

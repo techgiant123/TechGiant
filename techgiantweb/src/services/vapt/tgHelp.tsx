@@ -23,7 +23,7 @@ const SecurityCard: React.FC<SecurityCardProps> = ({
     <div className="flex flex-col w-full">
       <img src={imageUrl} alt={title} className="w-full h-64 object-cover" />
       <h2 className="text-xl font-medium mt-4 mb-2">{title}</h2>
-      <div className="w-12 h-1 bg-red-600 mb-4"></div>
+      <div className="w-12 h-1 bg-carousel2 mb-4"></div>
       <p className="text-gray-700 mb-4">{description}</p>
       <a href="#" className="text-gray-700 hover:text-gray-900 font-medium">
         {buttonText} &gt;
@@ -75,11 +75,11 @@ const TechgiantSecurityComponent: React.FC = () => {
   ];
 
   return (
-    <div className="w-full bg-[#F5F5F5] bg-opacity-100 py-16">
+    <div className="w-full bg-bfColor bg-opacity-100 py-16">
       <div className="bottom-0 left-0 w-full relative top-[-98px] md:top-[-204px] overflow-hidden">
-        <div className="text-black text-4xl sm:text-6xl md:text-8xl lg:text-9xl xl:text-[10rem] font-bold tracking-widest opacity-20">
+        {/* <div className="text-black text-4xl sm:text-6xl md:text-8xl lg:text-9xl xl:text-[10rem] font-bold tracking-widest opacity-20">
           how Tech Giant helps
-        </div>
+        </div> */}
       </div>
 
       <div className="max-w-6xl mx-auto px-6">

@@ -11,7 +11,7 @@ export const HomePage = () => {
     <div className="bg-bgColor">
       <HeroPage />
       <Gallery />
-      <div className="flex h-[170px] w-screen  ">
+      <div className="flex h-[170px] w-screen">
         <TechGiantText />
       </div>
       <div className="px-0 md:px-[150px]">

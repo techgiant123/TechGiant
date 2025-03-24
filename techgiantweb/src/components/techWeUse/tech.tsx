@@ -90,9 +90,12 @@ const TechnologiesWeUse: React.FC = () => {
   return (
     <div className="w-full py-12 bg-bgColor overflow-hidden relative mt-[120px] md:mt-[150px]">
       <div className="max-w-[110rem] mx-auto px-4">
-        <h2 className="text-3xl md:text-4xl font-light text-center text-orange-400 mb-8 md:mb-12">
-          Technologies We Use
-        </h2>
+        <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white flex justify-center items-center pb-32">
+          <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-600">
+            Technologies
+          </span>{" "}
+          We Use
+        </h1>
 
         {/* Marquee Wrapper with Blur Effect */}
         <div className="relative w-full overflow-hidden">

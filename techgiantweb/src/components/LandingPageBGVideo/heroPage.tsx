@@ -10,14 +10,13 @@ const RotatingAnimation = lazy(() =>
 export const HeroPage = memo(() => {
   const words = useMemo(
     () => [
-      "<>Empowering the future through",
-      "innovative software",
-      "solutions </>",
+      "Empowering the future through innovative",
+      "software solutions </>",
     ],
     []
   );
 
-  const [lines, setLines] = useState<string[]>(["", "", ""]);
+  const [lines, setLines] = useState<string[]>(["", ""]);
   const [wordIndex, setWordIndex] = useState(0);
   const [charIndex, setCharIndex] = useState(0);
   const [typingComplete, setTypingComplete] = useState(false);
@@ -55,21 +54,34 @@ export const HeroPage = memo(() => {
       className="h-screen w-screen overflow-hidden flex-col relative"
       id="intro"
     >
+      {/* Background Text */}
+      <div
+        className="absolute inset-0 flex items-center justify-center opacity-10 pointer-events-none "
+        style={{
+          fontSize: "20vw", // Adjust size as needed
+          fontWeight: "bold",
+          color: "white",
+          zIndex: 0, // Ensure it stays in the background
+        }}
+      >
+        TECH GIANT
+      </div>
+
       {/* Main Text */}
       <div
-        className="z-10 flex flex-col justify-center h-full text-center text-white bg-bgColor items-baseline"
+        className="z-10 flex flex-col justify-center h-full text-center text-white bg-bgColor items-baseline font-bigShoulders"
         style={{
           background:
             "radial-gradient(circle at left, rgba(118,60,172,1) 0%, rgba(17, 7, 31, 1) 30%)",
         }}
       >
-        <span className="pl-[120px] text-lg sm:text-xl md:text-2xl lg:text-3xl">
+        {/* <span className="pl-[1rem] text-base sm:text-lg md:text-xl lg:text-2xl font-bigShoulders">
           Benefit from our software solutions.
-        </span>
+        </span> */}
 
         {/* Typing Animation */}
         <div className="relative">
-          <h1 className="text-2xl relative z-10 sm:text-4xl md:text-5xl lg:text-6xl leading-tight text-left pl-[120px]">
+          <h1 className="sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-6xl leading-tight text-left pl-[5%] backdrop-blur-lg rounded-lg font-sans font-bold">
             {lines.map((line, index) => (
               <span key={index} className="block">
                 {line}
@@ -85,8 +97,8 @@ export const HeroPage = memo(() => {
         </div>
       </div>
 
-      {/* Rotating Logo (Visible only on large screens) */}
-      <div className="absolute right-[-12%] top-1/2 transform -translate-y-1/2 hidden md:flex">
+      {/* Rotating Logo */}
+      <div className="absolute right-0 top-1/2 transform -translate-y-1/2 w-[40%] max-w-[600px] min-w-[150px] hidden sm:block">
         <Suspense fallback={<div>Loading...</div>}>
           <RotatingAnimation />
         </Suspense>

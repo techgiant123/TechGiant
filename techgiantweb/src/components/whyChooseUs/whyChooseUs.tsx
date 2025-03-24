@@ -21,7 +21,6 @@ const WhyChooseUs: React.FC = () => {
           start: "top 80%",
           end: "top 50%",
           toggleActions: "play none none none",
-          markers: true, // Debugging (Remove in production)
         },
       });
 
@@ -45,7 +44,7 @@ const WhyChooseUs: React.FC = () => {
   return (
     <section
       ref={sectionRef}
-      className="relative bg-bgColor text-white py-12 px-6 md:px-20 flex flex-col md:flex-row items-center"
+      className="relative bg-bgColor text-white py-12 px-6 md:px-20 flex flex-col md:flex-row items-center mt-[50px] mb-[50px]"
     >
       {/* Left Section */}
       <div ref={leftRef} className="md:w-1/2">

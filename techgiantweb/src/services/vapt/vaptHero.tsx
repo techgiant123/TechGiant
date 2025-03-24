@@ -15,11 +15,11 @@ const SecurityOperationsHero: React.FC = () => {
       <div className="absolute inset-0 flex items-center">
         <div className="container mx-auto px-4 md:px-8 flex">
           {/* Left content overlay - dark gradient with text */}
-          <div className="w-full md:w-5/12 lg:w-4/12 bg-gradient-to-r from-gray-900 to-transparent p-6 md:p-10">
+          <div className="w-full md:w-5/12 lg:w-5/12 bg-gradient-to-r from-carousel1 to-transparent p-6 md:p-10">
             <div className="space-y-4">
               {/* Top red line and "Cyber resilience" label */}
               <div>
-                <div className="border-t-2 border-red-500 w-8 mb-2"></div>
+                <div className="border-t-2 border-carousel2 w-8 mb-2"></div>
                 <p className="text-sm text-gray-300 font-medium">
                   Cyber resilience
                 </p>

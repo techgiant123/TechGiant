@@ -24,7 +24,7 @@ const FeedbackCard: React.FC<FeedbackCardProps> = ({
   };
 
   return (
-    <div className="group relative cursor-pointer overflow-hidden bg-white px-6 pt-10 pb-8 shadow-xl ring-1 ring-gray-900/5 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl sm:max-w-sm sm:rounded-lg sm:px-10">
+    <div className="group relative cursor-pointer overflow-hidden bg-bgColor px-6 pt-10 pb-8 shadow-xl ring-1 ring-gray-900/5 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl sm:max-w-sm sm:rounded-lg sm:px-10">
       <span className="absolute top-10 z-0 h-[70px] w-[70px] rounded-full bg-carousel2 transition-all duration-1000 group-hover:scale-[20]"></span>
       <div className="relative z-10 mx-auto max-w-md">
         <div className="flex flex-row items-center">
@@ -45,7 +45,7 @@ const FeedbackCard: React.FC<FeedbackCardProps> = ({
         </div>
 
         {/* Feedback Text */}
-        <div className="space-y-6 pt-5 text-base leading-7 text-gray-600 transition-all duration-300 group-hover:text-white/90">
+        <div className="space-y-6 pt-5 text-base leading-7 text-white font-sans transition-all duration-300 group-hover:text-white/90">
           <p>{feedback}</p>
         </div>
       </div>
@@ -113,7 +113,7 @@ const FeedbackApp: React.FC = () => {
           href="#"
           className="text-bgColor transition-all duration-300 group-hover:text-white"
         >
-          Read the docs &rarr;
+          Kashif J
         </a>
       ),
       feedback:
@@ -126,7 +126,7 @@ const FeedbackApp: React.FC = () => {
           href="#"
           className="text-bgColor transition-all duration-300 group-hover:text-white"
         >
-          Read the docs &rarr;
+          Kashif J
         </a>
       ),
       feedback:

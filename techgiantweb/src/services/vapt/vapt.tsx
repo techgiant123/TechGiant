@@ -1,21 +1,21 @@
 import adaptiveImg from "../../assets/adaptive.png";
 const TGCyberDefense = () => {
   return (
-    <div className="w-full bg-white">
-      <div className="max-w-6xl mx-auto px-4 py-12 md:py-16">
-        <div className="flex flex-col md:flex-row gap-8 md:gap-16">
+    <div className="w-full bg-bgColor text-white">
+      <div className="max-w-6xl mx-auto px-4 py-12 md:py-16 text-white">
+        <div className="flex flex-col md:flex-row gap-8 md:gap-16 text-white">
           {/* Left content section */}
           <div className="w-full md:w-1/2 space-y-4">
             <div>
-              <div className="border-t-2 border-red-500 w-8 mb-2"></div>
-              <p className="text-sm text-gray-700 font-medium">What we do</p>
+              <div className="border-t-2 border-carousel2 w-8 mb-2"></div>
+              <p className="text-sm text-white font-medium">What we do</p>
             </div>
 
-            <h1 className="text-3xl md:text-4xl font-light text-gray-800 leading-tight">
+            <h1 className="text-3xl md:text-4xl font-light leading-tight font-sans text-white">
               Build an adaptive, flexible and scalable cyber defense
             </h1>
 
-            <p className="text-gray-700 leading-relaxed text-sm md:text-base mt-6">
+            <p className="text-white font-sans leading-relaxed text-sm md:text-base mt-6">
               Tech Giant Security Operations and Response Services offer
               businesses a flexible, modular and open approach to streamline and
               strengthen their cybersecurity and incident response capabilities.
@@ -25,7 +25,7 @@ const TGCyberDefense = () => {
               protect against, withstand, and recover from any cyber outages.
             </p>
 
-            <p className="text-gray-700 leading-relaxed text-sm md:text-base mt-4">
+            <p className="leading-relaxed text-sm md:text-base mt-4 text-white">
               With Tech Giant's Security Operations and Response Services,
               businesses can choose the tools and operating models they need to
               address various challenges and requirements across different
@@ -72,6 +72,9 @@ const TGCyberDefense = () => {
           </div>
         </div>
         <div className="relative mt-32 md:mt-48"></div>
+      </div>
+      <div className="text-carousel3 text-4xl sm:text-6xl md:text-8xl lg:text-9xl xl:text-[10rem] font-bold tracking-widest opacity-20">
+        how Tech Giant helps
       </div>
     </div>
   );

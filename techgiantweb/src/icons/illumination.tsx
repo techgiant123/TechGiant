@@ -2,8 +2,9 @@ import React from "react";
 
 const TechGiantText: React.FC = () => {
   return (
-    <div className="flex justify-center items-center w-screen h-[250px] bg-bgColor overflow-hidden">
-      <div className="w-full max-w-[90%] md:max-w-[700px] h-[150px]">
+    <div className="flex justify-center items-center w-screen h-[250px] bg-bgColor overflow-hidden font-doto">
+      <div className="h-[2px] w-screen bg-white"></div>
+      <div className="w-full max-w-[90%] md:max-w-[700px] h-[150px] font-doto">
         <svg
           viewBox="0 0 700 150"
           className="w-full h-full"
@@ -84,6 +85,7 @@ const TechGiantText: React.FC = () => {
         `}
         </style>
       </div>
+      <div className="h-[2px] w-screen bg-white"></div>
     </div>
   );
 };

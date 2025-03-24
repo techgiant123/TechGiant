@@ -469,6 +469,11 @@
   dependencies:
     levn "^0.4.1"
 
+"@fontsource/big-shoulders-stencil@^5.2.1":
+  version "5.2.1"
+  resolved "https://registry.yarnpkg.com/@fontsource/big-shoulders-stencil/-/big-shoulders-stencil-5.2.1.tgz#ea321dfa17421c1a386f39b2c82c4d04e3281ed8"
+  integrity sha512-sJUo3EAHwWulc3izUt52so7HD2uCLeYQ3dbARpx4ps60Ay/2GRpgtlzs5a4HIzCKBQ6udzMKb7A1Vtr89zQcVw==
+
 "@gsap/react@^2.1.2":
   version "2.1.2"
   resolved "https://registry.yarnpkg.com/@gsap/react/-/react-2.1.2.tgz#bfc055a41b402e8d1dc56839e9d077407027b0a0"

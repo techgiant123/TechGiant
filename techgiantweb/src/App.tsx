@@ -7,6 +7,7 @@ import Footer from "./components/footer/heroFooter";
 import { VaptContaner } from "./services/vaptContanar";
 import { useEffect } from "react";
 import ConnectWithUsSection from "./services/vapt/contactUs";
+import { DevContaner } from "./components/development/devContaner";
 
 function App() {
   const location = useLocation();
@@ -18,12 +19,14 @@ function App() {
   }, [location.pathname]);
 
   return (
-    <div className="bg-bgColor">
+    <div className="bg-bgColor overflow-x-hidden">
       <Header />
       <Routes key={location.pathname}>
         <Route path="/" element={<HomePage />} />
         <Route path="/Vapt" element={<VaptContaner />} />
+        <Route path="/Development" element={<DevContaner />} />
       </Routes>
+      {/* <DevContaner /> */}
       <ConnectWithUsSection />
 
       <Footer />
