@@ -3,12 +3,12 @@ import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from "react-icons/fa";
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-carousel1 text-gray-300 py-8">
-      <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
+    <footer className="bg-carousel1 text-gray-300 py-8 font-sans">
+      <div className="container max-w-6xl mx-auto px-4 ">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left justify-between font-sans">
           {/* Company Info */}
           <div>
-            <h2 className="text-xl font-semibold text-white">Company Name</h2>
+            <h2 className="text-xl text-white font-sans">Tech Giant</h2>
             <p className="mt-2 text-sm">
               Building a better web experience for everyone.
             </p>
@@ -16,7 +16,7 @@ const Footer: React.FC = () => {
 
           {/* Navigation */}
           <div>
-            <h3 className="text-lg font-semibold text-white">Quick Links</h3>
+            <h3 className="text-lg text-white ">Quick Links</h3>
             <ul className="mt-2 space-y-4 gap-3">
               <li>
                 <a href="/about" className="hover:text-white">
@@ -43,7 +43,7 @@ const Footer: React.FC = () => {
 
           {/* Social Media */}
           <div>
-            <h3 className="text-lg font-semibold text-white">Follow Us</h3>
+            <h3 className="text-lg  text-white">Follow Us</h3>
             <div className="flex justify-center md:justify-start mt-3 space-x-4">
               <a href="#" className="text-gray-400 hover:text-white">
                 <FaFacebook size={20} />

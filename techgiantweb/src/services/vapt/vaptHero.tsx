@@ -1,10 +1,11 @@
 import React from "react";
+import ScrollDown from "../../icons/scrollDown";
 
 const SecurityOperationsHero: React.FC = () => {
   return (
     <div className="w-full relative h-screen md:h-[66rem] mt-[58px]">
       {/* Background image container */}
-      <div className="absolute inset-0 w-full h-full">
+      <div className="absolute inset-0 w-full h-[80%]">
         <img
           src="./src/assets/vaptBG.png"
           alt="Security operations background"
@@ -12,8 +13,8 @@ const SecurityOperationsHero: React.FC = () => {
         />
       </div>
 
-      <div className="absolute inset-0 flex items-center">
-        <div className="container mx-auto px-4 md:px-8 flex">
+      <div className="absolute inset-0 flex items-center flex-col justify-center">
+        <div className="container mx-auto px-4 md:px-8 flex pb-[15rem]">
           {/* Left content overlay - dark gradient with text */}
           <div className="w-full md:w-5/12 lg:w-5/12 bg-gradient-to-r from-carousel1 to-transparent p-6 md:p-10">
             <div className="space-y-4">
@@ -45,6 +46,10 @@ const SecurityOperationsHero: React.FC = () => {
             {/* This area intentionally left empty to show the image of the person */}
           </div>
         </div>
+        <div className="absolute bottom-[14rem]">
+        <ScrollDown/>
+        </div>
+        
       </div>
     </div>
   );

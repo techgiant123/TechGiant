@@ -9,8 +9,6 @@ import React, {
 } from "react";
 import { gsap } from "gsap";
 import "tailwindcss/tailwind.css";
-
-// Import SVG files as URLs
 import innovationSvg from "../../assets/svg/innovation.svg";
 import qualitySvg from "../../assets/svg/quality.svg";
 import centricSvg from "../../assets/svg/centric.svg";
@@ -20,7 +18,7 @@ interface CardProps {
   title: string;
   description: string;
   svg: string;
-  isBlurred: boolean; // Add this prop
+  isBlurred: boolean;
 }
 
 const Card: React.FC<CardProps> = memo(
@@ -53,11 +51,9 @@ const Card: React.FC<CardProps> = memo(
     return (
       <div
         ref={cardRef}
-        className={`absolute font-sans top-0 left-0 w-full h-full text-center bg-gradient-to-br from-[#11071f] via-[#452170] to-[#11071f] rounded-xl flex flex-col md:flex-row items-center justify-between p-6 md:p-8 lg:p-10 xl:p-12 2xl:p-16 shadow-2xl transition-all duration-500 ease-in-out hover:shadow-[0_0_30px_rgba(139,92,246,0.3)] ${
-          isBlurred ? "filter blur-md" : ""
-        }`}
+        className={`absolute font-sans top-0 left-0 w-full h-full text-center bg-gradient-to-br from-[#11071f] via-[#452170] to-[#11071f] rounded-xl flex flex-col md:flex-row items-center justify-between p-6 md:p-8 lg:p-10 xl:p-12 2xl:p-16 shadow-2xl transition-all duration-500 ease-in-out hover:shadow-[0_0_30px_rgba(139,92,246,0.3)] ${isBlurred ? "filter blur-md" : ""
+          }`}
       >
-        {/* SVG Image Section with subtle animation */}
         <div className="h-24 w-24 sm:h-32 sm:w-32 md:h-40 md:w-40 lg:h-48 lg:w-48 xl:h-64 xl:w-64 2xl:h-80 2xl:w-80 relative flex justify-center items-center group">
           {isVisible ? (
             <div className="relative w-full h-full">
@@ -72,8 +68,6 @@ const Card: React.FC<CardProps> = memo(
             <div className="w-full h-full bg-gray-700/50 animate-pulse rounded-full" />
           )}
         </div>
-
-        {/* Text Content Section with improved typography */}
         <div className="flex flex-col font-sans items-center md:items-start text-center md:text-left mt-6 md:mt-0 md:ml-8 lg:ml-10 xl:ml-12 2xl:ml-16 flex-1">
           <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-300 to-indigo-200 mb-4 md:mb-6 leading-tight tracking-tight">
             {title}
@@ -94,8 +88,6 @@ const Gallery: React.FC = memo(() => {
   const seamlessLoopRef = useRef<gsap.core.Timeline | null>(null);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
-
-  // Progress indicator state
   const [progress, setProgress] = useState(0);
 
   const cardsData = useMemo(
@@ -124,7 +116,6 @@ const Gallery: React.FC = memo(() => {
     []
   );
 
-  // Update progress bar based on current index
   useEffect(() => {
     setProgress((currentIndex / (cardsData.length - 1)) * 100);
   }, [currentIndex, cardsData.length]);
@@ -206,7 +197,6 @@ const Gallery: React.FC = memo(() => {
         paused: true,
       });
 
-      // Initial animation to show the first card
       gsap.to(cards[0], {
         scale: 1,
         opacity: 1,
@@ -256,8 +246,6 @@ const Gallery: React.FC = memo(() => {
       });
     }
   }, [cardsData.length, isAnimating]);
-
-  // Function to handle direct navigation to specific card
   const handleDotClick = useCallback(
     (index: number) => {
       if (seamlessLoopRef.current && !isAnimating && index !== currentIndex) {
@@ -289,7 +277,7 @@ const Gallery: React.FC = memo(() => {
           title={card.title}
           description={card.description}
           svg={card.svg}
-          isBlurred={Math.abs(currentIndex - i) === 1} // Apply blur to adjacent cards
+          isBlurred={Math.abs(currentIndex - i) === 1}
         />
       </li>
     ));
@@ -297,14 +285,12 @@ const Gallery: React.FC = memo(() => {
 
   const isFirstCard = currentIndex === 0;
   const isLastCard = currentIndex === cardsData.length - 1;
-
-  // Auto-advance carousel with useEffect
   useEffect(() => {
     const autoAdvance = setTimeout(() => {
       if (!isLastCard && !isAnimating) {
         handleNext();
       }
-    }, 8000); // 8-second interval
+    }, 8000);
 
     return () => clearTimeout(autoAdvance);
   }, [currentIndex, isLastCard, handleNext, isAnimating]);
@@ -314,18 +300,15 @@ const Gallery: React.FC = memo(() => {
       ref={galleryRef}
       className="relative w-full overflow-hidden flex flex-col items-center justify-center bg-bgColor h-screen"
     >
-      {/* Animated background with subtle patterns */}
       <div className="absolute inset-0 z-0 opacity-20 h-screen">
-        <div className="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white font-doto"></div>
-        <div className="absolute w-96 h-96 -top-48 -left-48 bg-purple-600 rounded-full filter blur-3xl opacity-20 animate-pulse"></div>
+        {/* <div className="absolute w-96 h-96 -top-48 -left-48 bg-purple-600 rounded-full filter blur-3xl opacity-20 animate-pulse"></div> */}
         <div className="absolute w-96 h-96 -bottom-48 -right-48 bg-indigo-600 rounded-full filter blur-3xl opacity-20 animate-pulse"></div>
       </div>
       <div className="relative z-10 w-full max-w-6xl px-4">
-        {/* Title */}
         <div className="text-center mb-8">
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-2">
             Our Core{" "}
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-600">
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-300 to-indigo-200">
               Values
             </span>
           </h1>
@@ -334,18 +317,14 @@ const Gallery: React.FC = memo(() => {
             we do
           </p>
         </div>
-
-        {/* Cards container with arrow navigation */}
         <div className="relative w-full h-96 md:h-[30rem] lg:h-[35rem] mt-4 mb-16">
-          {/* Left arrow */}
           <button
             onClick={handlePrev}
             disabled={isFirstCard || isAnimating}
-            className={`absolute left-0 top-1/2 transform -translate-y-1/2 z-20 p-3 rounded-full bg-black bg-opacity-50 hover:bg-opacity-70 transition-all duration-300 ${
-              isFirstCard || isAnimating
+            className={`absolute left-0 top-1/2 transform -translate-y-1/2 z-20 p-3 rounded-full bg-black bg-opacity-50 hover:bg-opacity-70 transition-all duration-300 ${isFirstCard || isAnimating
                 ? "opacity-50 cursor-not-allowed"
                 : "hover:shadow-lg"
-            }`}
+              }`}
             aria-label="Previous"
           >
             <svg
@@ -370,16 +349,13 @@ const Gallery: React.FC = memo(() => {
           >
             {cards}
           </ul>
-
-          {/* Right arrow */}
           <button
             onClick={handleNext}
             disabled={isLastCard || isAnimating}
-            className={`absolute right-0 top-1/2 transform -translate-y-1/2 z-20 p-3 rounded-full bg-black bg-opacity-50 hover:bg-opacity-70 transition-all duration-300 ${
-              isLastCard || isAnimating
+            className={`absolute right-0 top-1/2 transform -translate-y-1/2 z-20 p-3 rounded-full bg-black bg-opacity-50 hover:bg-opacity-70 transition-all duration-300 ${isLastCard || isAnimating
                 ? "opacity-50 cursor-not-allowed"
                 : "hover:shadow-lg"
-            }`}
+              }`}
             aria-label="Next"
           >
             <svg
@@ -398,28 +374,16 @@ const Gallery: React.FC = memo(() => {
             </svg>
           </button>
         </div>
-
-        {/* Controls section */}
         <div className="flex flex-col items-center gap-8">
-          {/* Progress bar */}
-          {/* <div className="w-full max-w-md h-1 bg-gray-800 rounded-full overflow-hidden">
-            <div
-              className="h-full bg-gradient-to-r from-purple-500 to-indigo-500 transition-all duration-300 ease-out"
-              style={{ width: `${progress}%` }}
-            ></div>
-          </div> */}
-
-          {/* Navigation dots */}
           <div className="flex gap-3">
             {cardsData.map((_, i) => (
               <button
                 key={i}
                 onClick={() => handleDotClick(i)}
-                className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                  i === currentIndex
+                className={`w-3 h-3 rounded-full transition-all duration-300 ${i === currentIndex
                     ? "bg-purple-500 scale-125"
                     : "bg-gray-600 hover:bg-gray-500"
-                }`}
+                  }`}
                 aria-label={`Go to slide ${i + 1}`}
               />
             ))}

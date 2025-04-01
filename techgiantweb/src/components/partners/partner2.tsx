@@ -15,7 +15,7 @@ const ImageSlider: React.FC = () => {
       {/* Responsive Title */}
       <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white">
         Our{" "}
-        <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-600">
+        <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-300 to-indigo-200">
           Partners
         </span>
       </h1>
@@ -28,11 +28,14 @@ const ImageSlider: React.FC = () => {
       <div className="slider w-full h-[100px] md:h-[80px] sm:h-[60px] xs:h-[40px] shadow-lg overflow-hidden relative">
         <div className="absolute top-0 left-0 h-full w-[200px] md:w-[150px] sm:w-[100px] xs:w-[50px] bg-gradient-to-r from-bgColor to-transparent z-10"></div>
         <div className="absolute top-0 right-0 h-full w-[200px] md:w-[150px] sm:w-[100px] xs:w-[50px] bg-gradient-to-l from-bgColor to-transparent z-10"></div>
-        <div className="flex w-[3500px] gap-[15rem] md:gap-[10rem] sm:gap-[5rem] xs:gap-[2rem] animate-scroll">
+        <div className="flex w-[100%] gap-[15rem] md:gap-[10rem] sm:gap-[5rem] xs:gap-[2rem] animate-scroll">
           {[...images, ...images].map((src, index) => (
             <div
               key={index}
-              className="w-[250px] md:w-[200px] sm:w-[150px] xs:w-[100px] h-[100px] md:h-[80px] sm:h-[60px] xs:h-[40px] flex-shrink-0"
+              className="w-full max-w-[250px] h-[100px] flex-shrink-0 
+              md:max-w-[150px] md:h-[50px] 
+              sm:max-w-[150px] sm:h-[60px] 
+              xs:max-w-[100px] xs:h-[40px]"
             >
               <img
                 src={src}
@@ -52,7 +55,10 @@ const ImageSlider: React.FC = () => {
           {[...images, ...images].map((src, index) => (
             <div
               key={index}
-              className="w-[250px] md:w-[200px] sm:w-[150px] xs:w-[100px] h-[100px] md:h-[80px] sm:h-[60px] xs:h-[40px] flex-shrink-0"
+              className="w-full max-w-[250px] h-[100px] flex-shrink-0 
+           md:max-w-[150px] md:h-[50px] 
+           sm:max-w-[150px] sm:h-[60px] 
+           xs:max-w-[100px] xs:h-[40px]"
             >
               <img
                 src={src}

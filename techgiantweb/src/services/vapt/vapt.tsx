@@ -73,7 +73,7 @@ const TGCyberDefense = () => {
         </div>
         <div className="relative mt-32 md:mt-48"></div>
       </div>
-      <div className="text-carousel3 text-4xl sm:text-6xl md:text-8xl lg:text-9xl xl:text-[10rem] font-bold tracking-widest opacity-20">
+      <div className="text-carousel3 text-4xl sm:text-6xl md:text-8xl lg:text-9xl xl:text-[9rem] font-bold tracking-widest opacity-20 flex justify-center font-sans">
         how Tech Giant helps
       </div>
     </div>

@@ -51,7 +51,7 @@ export const HeroPage = memo(() => {
 
   return (
     <div
-      className="h-screen w-screen overflow-hidden flex-col relative"
+      className="h-[50vh] md:h-screen w-screen overflow-hidden flex-col relative"
       id="intro"
     >
       {/* Background Text */}
@@ -81,7 +81,7 @@ export const HeroPage = memo(() => {
 
         {/* Typing Animation */}
         <div className="relative">
-          <h1 className="sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-6xl leading-tight text-left pl-[5%] backdrop-blur-lg rounded-lg font-sans font-bold">
+          <h1 className="sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-6xl leading-tight text-left pl-[5%] backdrop-blur-lg rounded-lg font-sans font-bold text-600">
             {lines.map((line, index) => (
               <span key={index} className="block">
                 {line}

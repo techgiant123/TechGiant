@@ -23,7 +23,7 @@ const DevelopmentHero: React.FC = () => {
       {!isMobile && (
         <div className="absolute inset-0 z-0">
           <iframe
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover overflow-auto bg-bgColor"
             src="https://www.youtube.com/embed/rA7fwt-cBuc?autoplay=1&mute=1&loop=1&playlist=rA7fwt-cBuc&controls=0"
             title="YouTube video player"
             frameBorder="0"
@@ -37,7 +37,7 @@ const DevelopmentHero: React.FC = () => {
       {/* <div className="absolute inset-0 bg-black/50 z-5"></div> */}
 
       {/* Content container */}
-      <div className="relative z-10 max-w-6xl mx-auto h-full flex flex-col justify-center px-4 sm:px-6 lg:px-8 ">
+      <div className="relative z-10 max-w-6xl mx-auto h-[80%] flex flex-col justify-center px-4 sm:px-6 lg:px-8 ">
         <div className="bg-black/50 z-5 p-4 rounded-md">
           {/* Heading with highlight */}
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight mb-4 sm:mb-6">

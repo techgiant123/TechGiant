@@ -1,5 +1,3 @@
-import React from "react";
-
 const TechGiantText: React.FC = () => {
   return (
     <div className="flex justify-center items-center w-screen h-[250px] bg-bgColor overflow-hidden font-doto">

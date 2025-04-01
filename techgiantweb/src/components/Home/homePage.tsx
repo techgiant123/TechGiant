@@ -6,6 +6,7 @@ import WhyChooseUs from "../../components/whyChooseUs/whyChooseUs";
 import { HeroPage } from "../../components/LandingPageBGVideo/heroPage";
 import TechnologiesWeUse from "../techWeUse/tech";
 
+
 export const HomePage = () => {
   return (
     <div className="bg-bgColor">
@@ -16,6 +17,7 @@ export const HomePage = () => {
       </div>
       <div className="px-0 md:px-[150px]">
         <ImageSlider2 />
+        
         <WhyChooseUs />
         <TechnologiesWeUse />
         <FeedbackApp />

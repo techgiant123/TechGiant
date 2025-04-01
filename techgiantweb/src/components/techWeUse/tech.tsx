@@ -9,6 +9,7 @@ interface TechnologyLogo {
 
 const TechnologiesWeUse: React.FC = () => {
   const marqueeRef = useRef<HTMLDivElement>(null);
+  const marqueeContentRef = useRef<HTMLDivElement>(null);
 
   const technologies: TechnologyLogo[] = [
     {
@@ -77,42 +78,52 @@ const TechnologiesWeUse: React.FC = () => {
   const scrollingLogos = [...technologies, ...technologies];
 
   useEffect(() => {
-    if (marqueeRef.current) {
-      gsap.to(marqueeRef.current, {
-        x: "-50%", // Move by half the width to ensure seamless looping
-        duration: 20, // Adjust speed (lower is faster)
-        ease: "linear",
-        repeat: -1, // Infinite loop
-      });
+    if (marqueeRef.current && marqueeContentRef.current) {
+      // Calculate the exact width of one set of logos (non-duplicated)
+      const itemWidth = 64 + 40; // w-16 (64px) + gap-10 (40px)
+      const singleSetWidth = technologies.length * itemWidth;
+      const duration = singleSetWidth / 50; // Adjust 50 for speed control
+  
+      gsap.fromTo(marqueeContentRef.current,
+        { x: 0 },
+        {
+          x: -singleSetWidth, // Move by exactly one set width
+          duration: duration,
+          ease: "none",
+          repeat: -1,
+          // Reset position when complete for perfect loop
+          onRepeat: () => {
+            gsap.set(marqueeContentRef.current, { x: 0 });
+          }
+        }
+      );
     }
   }, []);
+  
 
   return (
     <div className="w-full py-12 bg-bgColor overflow-hidden relative mt-[120px] md:mt-[150px]">
       <div className="max-w-[110rem] mx-auto px-4">
-        <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white flex justify-center items-center pb-32">
-          <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-600">
-            Technologies
-          </span>{" "}
+        <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white flex justify-center items-center pb-32 gap-[1rem]">
+          <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-300 to-indigo-200 h-auto">
+            Technologies{""}
+          </span>
+          
           We Use
         </h1>
-
-        {/* Marquee Wrapper with Blur Effect */}
-        <div className="relative w-full overflow-hidden">
-          {/* Left Blur */}
+        <div ref={marqueeRef} className="relative w-full overflow-hidden">
           <div className="absolute left-0 top-0 h-full w-24 bg-gradient-to-r from-bgColor to-transparent z-10 pointer-events-none"></div>
-
-          {/* Right Blur */}
           <div className="absolute right-0 top-0 h-full w-24 bg-gradient-to-l from-bgColor to-transparent z-10 pointer-events-none"></div>
 
           <div
-            ref={marqueeRef}
+            ref={marqueeContentRef}
             className="flex gap-10 md:gap-16 whitespace-nowrap w-max"
+            style={{ willChange: 'transform' }} 
           >
             {scrollingLogos.map((tech, index) => (
               <div
                 key={index}
-                className="w-24 h-24 md:w-32 md:h-32 flex items-center justify-center"
+                className="w-16 h-16 md:w-16 md:h-16 flex items-center justify-center"
               >
                 <img
                   src={tech.logoUrl}
