@@ -1,8 +1,6 @@
-import React from "react";
-
 const DevServices = () => {
   return (
-    <div className="bg-bgColor text-white py-16 px-4">
+    <div className="bg-navBg text-white py-16 px-4">
       <div className="max-w-6xl mx-auto">
         {/* Header Section */}
         <div className="flex flex-col md:flex-row justify-between mb-12 gap-8">
@@ -25,11 +23,11 @@ const DevServices = () => {
         {/* Services - Arranged in three columns exactly as specified */}
         <div className="flex flex-col md:flex-row gap-4">
           {/* First Column - Websites and Ecommerce */}
-          <div className="md:w-1/3 flex flex-col gap-4">
+          <div className=" flex flex-col gap-4">
             {/* Websites */}
-            <div className="bg-gray-800 p-6 rounded">
+            <div className="bg-bgColor p-6 rounded">
               <div className="flex justify-between items-start mb-4">
-                <h3 className="text-xl font-bold">Websites</h3>
+                <h3 className="text-xl font-bold font-doto">Websites</h3>
                 <div className="bg-gray-900 p-2 rounded-full">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -54,9 +52,9 @@ const DevServices = () => {
             </div>
 
             {/* Ecommerce */}
-            <div className="bg-gray-800 p-6 rounded">
+            <div className="bg-bgColor p-6 rounded">
               <div className="flex justify-between items-start mb-4">
-                <h3 className="text-xl font-bold">Ecommerce</h3>
+                <h3 className="text-xl font-bold font-doto">Ecommerce</h3>
                 <div className="bg-gray-900 p-2 rounded-full">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -84,9 +82,9 @@ const DevServices = () => {
           {/* Second Column - Web Applications and Content Management Systems */}
           <div className="md:w-1/3 flex flex-col gap-4">
             {/* Web Applications */}
-            <div className="bg-gray-800 p-6 rounded">
+            <div className="bg-bgColor p-6 rounded">
               <div className="flex justify-between items-start mb-4">
-                <h3 className="text-xl font-bold">Web Applications</h3>
+                <h3 className="text-xl font-bold font-doto">Web Applications</h3>
                 <div className="bg-gray-900 p-2 rounded-full">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -111,9 +109,9 @@ const DevServices = () => {
             </div>
 
             {/* Content Management Systems */}
-            <div className="bg-gray-800 p-6 rounded">
+            <div className="bg-bgColor p-6 rounded">
               <div className="flex justify-between items-start mb-4">
-                <h3 className="text-xl font-bold">
+                <h3 className="text-xl font-bold font-doto">
                   Content Management Systems
                 </h3>
                 <div className="bg-gray-900 p-2 rounded-full">
@@ -143,9 +141,9 @@ const DevServices = () => {
           {/* Third Column - Low-Code Development */}
           <div className="md:w-1/3 flex flex-col">
             {/* Low-Code Development */}
-            <div className="bg-gray-800 p-6 rounded h-full">
+            <div className="bg-bgColor p-6 rounded h-full">
               <div className="flex justify-between items-start mb-4">
-                <h3 className="text-xl font-bold">Low-Code Development</h3>
+                <h3 className="text-xl font-bold font-doto">Low-Code Development</h3>
                 <div className="bg-gray-900 p-2 rounded-full">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -163,7 +161,7 @@ const DevServices = () => {
                   </svg>
                 </div>
               </div>
-              <p className="text-gray-400">
+              <p className="text-gray-400 font-sans">
                 Low-code and no-code solutions offer an easy, modular, and
                 scalable way of building applications.
               </p>

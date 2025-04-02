@@ -16,7 +16,6 @@ interface SecurityCardProps {
 const SecurityCard: React.FC<SecurityCardProps> = ({
   title,
   description,
-  buttonText,
   imageUrl,
 }) => {
   return (

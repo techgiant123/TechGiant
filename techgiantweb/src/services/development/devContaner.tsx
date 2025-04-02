@@ -1,6 +1,7 @@
 import DevelopmentHero from "./developmentHero";
 import DevServices from "./devService";
 import WDP from "./WDP";
+import SupportDev  from "./supportDev";
 
 export function DevContaner() {
   return (
@@ -8,6 +9,7 @@ export function DevContaner() {
       <DevelopmentHero />
       <DevServices />
       <WDP />
+      <SupportDev/>
     </div>
   );
 }

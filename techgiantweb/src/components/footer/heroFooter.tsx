@@ -45,16 +45,26 @@ const Footer: React.FC = () => {
           <div>
             <h3 className="text-lg  text-white">Follow Us</h3>
             <div className="flex justify-center md:justify-start mt-3 space-x-4">
-              <a href="#" className="text-gray-400 hover:text-white">
+              <a href="" className="text-gray-400 hover:text-white">
                 <FaFacebook size={20} />
               </a>
               <a href="#" className="text-gray-400 hover:text-white">
                 <FaTwitter size={20} />
               </a>
-              <a href="#" className="text-gray-400 hover:text-white">
+              <a
+                href="https://www.instagram.com/itstechgiant?igsh=MW9nd3Y2N2VkaGFn"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-white"
+              >
                 <FaInstagram size={20} />
               </a>
-              <a href="#" className="text-gray-400 hover:text-white">
+              <a
+                href="https://www.linkedin.com/in/tech-giant-9a42b3284"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-white"
+              >
                 <FaLinkedin size={20} />
               </a>
             </div>

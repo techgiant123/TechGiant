@@ -7,7 +7,7 @@ interface SigmaLogoProps {
 }
 
 export const RotatingAnimation: React.FC<SigmaLogoProps> = ({
-  text = "· Crafting Digital Excellence for a Smarter Future ·",
+  text = "·Crafting Digital Excellence for a Smarter Future",
   rotationSpeed = 0.7,
 }) => {
   const [rotation, setRotation] = useState(0);

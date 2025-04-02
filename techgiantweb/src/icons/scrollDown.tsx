@@ -1,17 +1,9 @@
 import React from 'react';
-
 const ScrollDown: React.FC = () => {
-  // Constants from the original SCSS
   const size = 80;
   const speed = 3;
   const peakOpacity = 0.7;
-
-  // Calculate derived values
   const borderSize = size / 3;
-  const negativeHalfSize = size / -2;
-  const negativeTwoThirdsSize = (size * 2) / -3;
-
-  // Keyframes animation as a style object
   const keyframes = `
     @keyframes arrows {
       0% {

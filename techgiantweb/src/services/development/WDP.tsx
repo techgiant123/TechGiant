@@ -4,37 +4,42 @@ interface ProcessStepProps {
   number: string;
   title: string;
   description: string;
+  isActive: boolean;
+  onHover: () => void;
 }
 
 const ProcessStep: React.FC<ProcessStepProps> = ({
   number,
   title,
   description,
+  isActive,
+  onHover,
 }) => {
-  const [isHovering, setIsHovering] = useState(false);
-
   return (
-    <div className="flex flex-col items-start">
+    <div className="flex flex-col items-start relative">
       <div
-        className="text-5xl font-bold text-white mb-8 cursor-pointer transition-all duration-300"
-        onMouseEnter={() => setIsHovering(true)}
-        onMouseLeave={() => setIsHovering(false)}
+        className={`text-5xl font-bold mb-8 cursor-pointer transition-all duration-300 ${
+          isActive ? "text-carousel2" : "text-white"
+        }`}
+        onMouseEnter={onHover}
       >
         {number}
       </div>
-      <h3 className="text-white font-medium mb-2">{title}</h3>
-      <div
-        className={`text-gray-300 text-sm overflow-hidden transition-all duration-300 ${
-          isHovering ? "max-h-20 opacity-100" : "max-h-0 opacity-0"
-        }`}
-      >
-        {description}
-      </div>
+      <h3 className={`font-medium mb-2 ${isActive ? "text-carousel2" : "text-white"}`}>
+        {title}
+      </h3>
+      {isActive && (
+        <div className="text-gray-300 text-sm transition-all duration-300 max-h-20 opacity-100">
+          {description}
+        </div>
+      )}
     </div>
   );
 };
 
 const WebDevelopmentProcess: React.FC = () => {
+  const [activeStep, setActiveStep] = useState<number | null>(null);
+  
   const steps = [
     {
       number: "01",
@@ -70,7 +75,7 @@ const WebDevelopmentProcess: React.FC = () => {
 
   return (
     <div className="w-full bg-bgColor text-white py-16">
-      <div className="container mx-auto max-w-[72rem] px-4">
+      <div className="container mx-auto max-w-6xl px-4">
         {/* Header Section */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-20">
           <div>
@@ -93,13 +98,15 @@ const WebDevelopmentProcess: React.FC = () => {
         </div>
 
         {/* Process Steps */}
-        <div className="grid grid-cols-1 md:grid-cols-5 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-8 pb-10">
           {steps.map((step, index) => (
             <ProcessStep
               key={index}
               number={step.number}
               title={step.title}
               description={step.description}
+              isActive={activeStep === index}
+              onHover={() => setActiveStep(index)}
             />
           ))}
         </div>
