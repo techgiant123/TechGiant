@@ -3,7 +3,7 @@ import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from "react-icons/fa";
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-carousel1 text-gray-300 py-8 font-sans">
+    <footer className="bg-carousel1 text-gray-300 py-8 font-sans bg-[url('/Users/asad.mulla/Documents/TechGiant/TechGiant/techgiantweb/src/assets/liquid.jpg')] bg-fixed transition-all bg-cover">
       <div className="container max-w-6xl mx-auto px-4 ">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left justify-between font-sans">
           {/* Company Info */}

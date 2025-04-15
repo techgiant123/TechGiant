@@ -1,8 +1,8 @@
 const TechGiantText: React.FC = () => {
   return (
-    <div className="flex justify-center items-center w-screen h-[250px] bg-bgColor overflow-hidden font-doto">
+    <div className="flex justify-center items-center w-screen h-[250px] sm:h-[200px] xs:h-[180px] bg-bgColor overflow-hidden font-doto">
       <div className="h-[2px] w-screen bg-white"></div>
-      <div className="w-full max-w-[90%] md:max-w-[700px] h-[150px] font-doto">
+      <div className="w-full max-w-[90%] md:max-w-[700px] h-[150px] sm:h-[120px] xs:h-[100px]">
         <svg
           viewBox="0 0 700 150"
           className="w-full h-full"
@@ -13,7 +13,6 @@ const TechGiantText: React.FC = () => {
             y="50%"
             dominantBaseline="middle"
             textAnchor="middle"
-            fontSize="130"
             className="tech-text"
           >
             TECH GIANT
@@ -26,14 +25,14 @@ const TechGiantText: React.FC = () => {
 
           .tech-text {
             font-family: 'League Gothic', sans-serif;
-            text-align: center;
             stroke-width: 3px;
             stroke-dasharray: 80;
-            fill: rgba(0, 0, 0, 0);
             stroke-linecap: round;
+            fill: transparent;
             animation: follow 1.8s linear infinite;
             transition: all 2.1s;
             letter-spacing: 20px;
+            font-size: 130px;
           }
 
           @keyframes follow {
@@ -62,21 +61,21 @@ const TechGiantText: React.FC = () => {
           /* Responsive adjustments */
           @media (max-width: 768px) {
             .tech-text {
-              font-size: 100px; /* Smaller font size for tablets */
+              font-size: 100px;
               letter-spacing: 15px;
             }
           }
 
           @media (max-width: 480px) {
             .tech-text {
-              font-size: 60px; /* Smaller font size for mobile */
+              font-size: 60px;
               letter-spacing: 10px;
             }
           }
 
           @media (max-width: 320px) {
             .tech-text {
-              font-size: 50px; /* Extra small font size for very small devices */
+              font-size: 50px;
               letter-spacing: 5px;
             }
           }

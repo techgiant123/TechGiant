@@ -13,12 +13,12 @@ const SupportDev = () => {
       <div className="max-w-6xl mx-auto">
         <div className="grid md:grid-cols-2 gap-16 items-center mb-16">
           <div>
-            <h2 className="text-4xl font-bold mb-2">
+            <h2 className="text-4xl font-bold mb-2 font-sans">
               Why seek support with{' '}
-              <span className="text-carousel2">web development?</span>
+              <span className="text-carousel2 font-sans">web development?</span>
             </h2>
             
-            <p className="mt-6 text-gray-300">
+            <p className="mt-6 text-white font-sans">
               Businesses that we've worked with reported faster time-to-market, premium user experience, 
               and flawless performance. We build web solutions for:
             </p>
@@ -27,7 +27,7 @@ const SupportDev = () => {
           <div className="flex justify-end">
             <a 
               href="#clients" 
-              className="border border-white rounded-md py-2 px-4 flex items-center hover:bg-gray-800 transition-colors"
+              className="border border-white rounded-md font-sans py-2 px-4 flex items-center hover:bg-gray-800 transition-colors"
             >
               See our clients
               <svg 
@@ -48,7 +48,7 @@ const SupportDev = () => {
           </div>
         </div>
         
-        <div className="grid grid-cols-3 md:grid-cols-6 gap-8 items-center">
+        <div className="grid grid-cols-3 md:grid-cols-6 gap-8 items-center font-sans">
           {clients.map((client) => (
             <div key={client.id} className="flex justify-center">
               <img 

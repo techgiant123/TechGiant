@@ -74,14 +74,14 @@ const WebDevelopmentProcess: React.FC = () => {
   ];
 
   return (
-    <div className="w-full bg-bgColor text-white py-16">
+    <div className="w-full bg-bgColor text-white py-16 font-sans">
       <div className="container mx-auto max-w-6xl px-4">
         {/* Header Section */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-20">
           <div>
-            <h2 className="text-3xl font-bold mb-2">
+            <h2 className="text-3xl font-bold mb-2 font-sans">
               Leverage our proven{" "}
-              <span className="text-carousel2">
+              <span className="text-carousel2 font-sans">
                 web
                 <br />
                 development process
@@ -89,7 +89,7 @@ const WebDevelopmentProcess: React.FC = () => {
             </h2>
           </div>
           <div>
-            <p className="text-gray-300">
+            <p className="text-white font-sans">
               We've delivered over 2500 projects – we know what it takes to
               execute a seamless and optimized web-based software development
               process.
@@ -98,7 +98,7 @@ const WebDevelopmentProcess: React.FC = () => {
         </div>
 
         {/* Process Steps */}
-        <div className="grid grid-cols-1 md:grid-cols-5 gap-8 pb-10">
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-8 pb-10 font-sans">
           {steps.map((step, index) => (
             <ProcessStep
               key={index}

@@ -51,7 +51,7 @@ export const HeroPage = memo(() => {
 
   return (
     <div
-      className="h-[50vh] md:h-screen w-screen overflow-hidden flex-col relative"
+      className="h-screen md:h-screen w-screen overflow-hidden flex-col relative"
       id="intro"
     >
       {/* Background Text */}

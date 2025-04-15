@@ -298,7 +298,7 @@ const Gallery: React.FC = memo(() => {
   return (
     <div
       ref={galleryRef}
-      className="relative w-full overflow-hidden flex flex-col items-center justify-center bg-bgColor h-screen"
+      className="relative w-full overflow-hidden flex flex-col items-center justify-center bg-bgColor h-screen bg-[url('/Users/asad.mulla/Documents/TechGiant/TechGiant/techgiantweb/src/assets/liquid.jpg')] bg-fixed transition-all bg-cover"
     >
       <div className="absolute inset-0 z-0 opacity-20 h-screen">
         {/* <div className="absolute w-96 h-96 -top-48 -left-48 bg-purple-600 rounded-full filter blur-3xl opacity-20 animate-pulse"></div> */}

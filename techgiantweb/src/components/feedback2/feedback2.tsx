@@ -136,9 +136,9 @@ const FeedbackApp: React.FC = () => {
   ];
 
   return (
-    <div className="relative flex min-h-screen flex-col justify-center overflow-hidden py-6 sm:py-12">
+    <div className="relative flex min-h-screen flex-col justify-center overflow-hidden py-6 sm:py-12 ">
       {/* Grid Layout: 3 cards per row on large screens */}
-      <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 px-4 sm:px-8 lg:px-16 justify-items-center">
+      <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 px-4 sm:px-8 lg:px-16 justify-items-center ">
         {feedbackData.map((item, index) => (
           <FeedbackCard
             key={index}
@@ -153,3 +153,6 @@ const FeedbackApp: React.FC = () => {
 };
 
 export default FeedbackApp;
+
+
+// max-w-7xl w-full mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center

@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 const ConnectWithUsSection: React.FC = () => {
   // Define your company's email and optional subject/body
-  const companyEmail = "yourcompany@example.com";
+  const companyEmail = "Info@tech-giant.in";
   const emailSubject = "Request for Consultation";
   const emailBody = "Hello, I would like to request a consultation about your services.";
 

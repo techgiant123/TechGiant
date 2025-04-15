@@ -64,10 +64,10 @@ const WhyChooseUs: React.FC = () => {
   return (
     <section
       ref={sectionRef}
-      className="relative bg- text-white py-16 px-6 md:px-12 lg:px-24 xl:px-32 flex flex-col md:flex-row items-center justify-between gap-12"
+      className="relative bg- text-white py-16 px-6 md:px-12 lg:px-24 xl:px-32 flex flex-col md:flex-row items-center justify-between gap-12 max-w-[105rem] mx-auto "
     >
       {/* Decorative elements */}
-      <div className="absolute inset-0 overflow-hidden">
+      <div className="absolute inset-0 overflow-hidden ">
         <div className="absolute top-0 left-0 w-32 h-32 bg-blue-700 rounded-full filter blur-3xl opacity-20"></div>
         <div className="absolute bottom-0 right-0 w-40 h-40 bg-purple-700 rounded-full filter blur-3xl opacity-20"></div>
       </div>

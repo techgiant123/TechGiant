@@ -15,7 +15,7 @@ export const HomePage = () => {
       <div className="flex h-[170px] w-screen">
         <TechGiantText />
       </div>
-      <div className="px-0 md:px-[150px]">
+      <div className="px-0 flex flex-col item-center justify-center ">
         <ImageSlider2 />
         
         <WhyChooseUs />
