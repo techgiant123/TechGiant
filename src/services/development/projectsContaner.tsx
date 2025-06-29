@@ -2,7 +2,7 @@ import { ArrowRight } from "lucide-react";
 import DevProjectScreen from "../development/devProjectScreen";
 import ForestHerbs from "../../assets/forestHearbs.mp4";
 import Falahzar from "../../assets/falahzar.mp4";
-import Influx from "../../assets/influx.mp4";
+import Influx from "../../assets/influx1.mp4";
 import PrayasVid from "../../assets/Prayas.mp4";
 
 // Reusable section component
