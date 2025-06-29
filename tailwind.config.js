@@ -7,6 +7,15 @@ export default {
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
+  safelist: [
+    /^bg-/,
+    /^text-/,
+    /^border-/,
+    /^hover:/,
+    /^focus:/,
+    /^active:/,
+    /^disabled:/,
+  ],
   theme: {
     screens: {
       xs: { max: "400px" },
@@ -99,22 +108,4 @@ export default {
     preflight: true,
   },
   important: false,
-  purge: {
-    enabled: process.env.NODE_ENV === "production",
-    content: [
-      "./src/**/*.{js,jsx,ts,tsx}",
-      "./public/index.html",
-    ],
-    options: {
-      safelist: [
-        /^bg-/,
-        /^text-/,
-        /^border-/,
-        /^hover:/,
-        /^focus:/,
-        /^active:/,
-        /^disabled:/,
-      ],
-    },
-  },
 };
